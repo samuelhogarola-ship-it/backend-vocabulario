@@ -23,9 +23,9 @@ app.get("/api/vocabulario", async (req, res) => {
 
     const palabras = response.results.map(page => {
       return {
-        aleman: page.properties.Aleman?.title?.[0]?.plain_text || "",
-        espanol: page.properties.Espanol?.rich_text?.[0]?.plain_text || "",
-        categoria: page.properties.Categoria?.select?.name || "Vocabulario"
+        aleman: page.properties["Alemán"]?.title?.[0]?.plain_text || "",
+        espanol: page.properties["Español"]?.rich_text?.[0]?.plain_text || "",
+        categoria: page.properties["Categoría"]?.select?.name || "Vocabulario"
       };
     });
 
