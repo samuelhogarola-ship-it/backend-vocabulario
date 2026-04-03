@@ -9,7 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 👇 NUEVO (sustituye Notion)
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
@@ -40,7 +39,6 @@ app.get("/api/vocabulario", async (req, res) => {
   }
 });
 
-// 👇 ESTO NO LO TOCAS (lo dejas como estaba)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
